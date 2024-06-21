@@ -1,0 +1,19 @@
+{
+  "name": "WS",
+  "version": "1.0.0",
+  "description": "WS Server for the z-Commerce Checkout Frontend to communicate with the Digital Wallet",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Egor Ermolaev",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.19.2",
+    "ws": "8.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
