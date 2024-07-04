@@ -1,20 +1,27 @@
 services:
 
-  socket:
+  socket-storefront: &socket
     restart: always
-    container_name: socket
+    container_name: socket-storefront
     build:
       dockerfile: Dockerfile
     volumes:
       - ./src:/app/src
     ports:
-      - 8888:8888
-      - 7777:7777
-    command: yarn run start
+      - 18888:8888
+      - 17777:7777
+    command: yarn run dev
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8888" ] # for build & dev
     networks:
       - heimdall-network
+
+  socket-delivery:
+    <<: *socket
+    container_name: socket-delivery
+    ports:
+      - 28888:8888
+      - 27777:7777
 
 networks:
   heimdall-network:
