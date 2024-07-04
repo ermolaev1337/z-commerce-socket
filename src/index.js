@@ -6,6 +6,8 @@ const port = 8888;
 
 let webSocketConnection;
 
+app.use(express.json());
+
 app.listen(port, async () => {
     wss = startWS();
     console.log("WS Server is running on port", port);
